@@ -1,0 +1,105 @@
+/* Estilos para el navbar */
+.navbar {
+    padding: 20px 0;
+    color: #556B2F;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+}
+
+
+header {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #3a4921;;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #e4e4e4;
+}
+
+#about {
+    padding: 50px 0;
+}
+
+#about .row {
+    align-items: center;
+}
+
+#about .col-md-6 {
+    padding: 20px;
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 0;
+}
+
+/* Estilos para el texto destacado */
+.highlight-text {
+    font-size: 1.2rem;
+    color: #007bff;
+    /* Color azul */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el texto extendido */
+.extended-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.titulo_mapa {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif; /* Una fuente elegante */
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+footer {
+    background-color: #3a4921;
+    /* Color verde musgo */
+    color: #ffffff;
+    /* Color del texto en el footer */
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin: 0 auto 0px; /* Esto centra el mapa horizontalmente */
+}
