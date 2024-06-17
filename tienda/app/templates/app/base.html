@@ -9,7 +9,8 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
     <script
       src="https://code.jquery.com/jquery-3.7.1.js"
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -57,7 +58,7 @@
       </div>
     </nav>
 
-    <div id="contenido">{% block contenido %}</div>
+    <div id="contenido">{% block contenido %} {% endblock %}</div>
 
     <!-- Pie de página -->
     <footer class="text-center mt-5 py-3">
