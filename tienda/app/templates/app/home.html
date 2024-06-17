@@ -1,23 +1,24 @@
 {% extends 'app/base.html' %}  {% load static %} {% block contenido %}
+<!-- Carrusel -->
 <div id="inicio" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img
-        src="{% static 'app/img2/lottie-griffiths-6EO9G_cOCi0-unsplash.jpg' %}"
+        src="{% static 'app/img2/carousel1.jpg' %}"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item">
       <img
-        src="{% static 'app/img2/thanh-soledas-Kf1nBG76Xe8-unsplash.jpg' %}"
+        src="{% static 'app/img2/carousel2.jpg' %}"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item">
       <img
-        src="{% static 'app/img2/thanh-soledas-M-Pnm-XAfr4-unsplash.jpg' %}"
+        src="{% static 'app/img2/carousel3.jpg' %}"
         class="d-block w-100"
         alt="..."
       />
@@ -42,7 +43,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+<!-- Tienda -->
 <section id="shop" class="shop">
   <div class="container">
     <h2 class="text-center mt-5">Nuestros productos</h2>
@@ -51,7 +52,7 @@
         <div class="card">
           <a href="shop.html">
             <img
-              src="{% static 'app/img/hongos/Portobello.jpg' %}"
+              src="{% static 'app/img/hongos/portobello.jpg' %}"
               class="card-img-top"
               alt="Producto 1"
             />
@@ -70,7 +71,7 @@
         <div class="card">
           <a href="shop.html">
             <img
-              src="{% static 'app/img/hongos/Shiitakel.jpg' %}"
+              src="{% static 'app/img/hongos/shiitake.jpg' %}"
               class="card-img-top"
               alt="Producto 2"
             />

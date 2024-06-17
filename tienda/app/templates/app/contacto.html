@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola no se  q poner oajlaladnwkenkef </h1>
-</body>
-</html>
+{% extends 'app/base.html' %} {% load static %} {% block contenido %}
+<!-- Contenido principal: Contacto -->
+<section>
+  <div class="container">
+    <h1>Contacto</h1>
+    <form id="contactForm" action="#" method="post">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required /><br /><br />
+      <label for="comentario">Comentario:</label><br />
+      <textarea
+        id="comentario"
+        name="comentario"
+        rows="4"
+        cols="50"
+        required
+      ></textarea
+      ><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+  </div>
+</section>
+{% endblock %}
