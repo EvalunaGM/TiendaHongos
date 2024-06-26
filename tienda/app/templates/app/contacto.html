@@ -9,18 +9,21 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <h1 class="text-center">Contacto</h1>
-    {% if mensaje %}
-      <div class="alert alert-success">
-        {{ mensaje }}
-      </div>
-    {% endif %}
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <form id="contactForm" method="post">
-          {% csrf_token %}
-          {% crispy form %}
-          <button type="submit" class="btn btn-primary mt-3">Enviar</button>
-        </form>
+        {% if mensaje %}
+          <div class="alert alert-success">
+            {{ mensaje }}
+          </div>
+        {% endif %}
+        <div class="card">
+          <div class="card-body">
+            <form id="contactForm" method="post">
+              {% csrf_token %}
+              {% crispy form %}
+                <button type="submit" class="btn btn-primary mt-3 me-2">Enviar</button>
+                <button type="reset" class="btn btn-secondary mt-3">Borrar</button>      
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
