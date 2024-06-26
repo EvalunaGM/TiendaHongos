@@ -1,22 +1,28 @@
-{% extends 'app/base.html' %} {% load static %} {% block contenido %}
+{% extends 'app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
 <!-- Contenido principal: Contacto -->
 <section>
-  <div class="container">
-    <h1>Contacto</h1>
-    <form id="contactForm" action="#" method="post">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required /><br /><br />
-      <label for="comentario">Comentario:</label><br />
-      <textarea
-        id="comentario"
-        name="comentario"
-        rows="4"
-        cols="50"
-        required
-      ></textarea
-      ><br /><br />
-      <input type="submit" value="Enviar" />
-    </form>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 class="text-center">Contacto</h1>
+    {% if mensaje %}
+      <div class="alert alert-success">
+        {{ mensaje }}
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form id="contactForm" method="post">
+          {% csrf_token %}
+          {% crispy form %}
+          <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}
