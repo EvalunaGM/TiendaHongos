@@ -4,28 +4,30 @@
 
 {% block contenido %}
 <!-- Contenido principal: Contacto -->
-<section>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <h1 class="text-center">Contacto</h1>
-        {% if mensaje %}
-          <div class="alert alert-success">
-            {{ mensaje }}
-          </div>
-        {% endif %}
-        <div class="card">
-          <div class="card-body">
-            <form id="contactForm" method="post">
-              {% csrf_token %}
-              {% crispy form %}
-                <button type="submit" class="btn btn-primary mt-3 me-2">Enviar</button>
-                <button type="reset" class="btn btn-secondary mt-3">Borrar</button>      
-            </form>
-          </div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center">Contacto</h1>
+      {% if mensaje %}
+      <div class="alert alert-success">{{ mensaje }}</div>
+      {% endif %}
+      <div class="card">
+        <div class="card-body">
+          <form id="contactForm" method="post">
+            {% csrf_token %} {% crispy form %}
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary mt-3 me-2">
+                Enviar
+              </button>
+              &nbsp;
+              <button type="reset" class="btn btn-secondary mt-3">
+                Borrar
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 {% endblock %}

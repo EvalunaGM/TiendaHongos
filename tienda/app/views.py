@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import ContactoForm
+from .forms import ContactoForm, ProductoForm
 
 # Create your views here.
 def home (request):
@@ -28,3 +28,16 @@ def somos (request):
 
 def registro (request):
     return render (request, 'app/registro.html')
+
+def agregar_producto (request):
+    data = {
+        'form': ProductoForm()
+    }
+    if request.method== 'POST':
+        formulario = ProductoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data ["mensaje"]="guardado correctamente"
+        else:
+            data ["form"] = formulario
+    return render (request, 'app/producto/agregar.html', data)
