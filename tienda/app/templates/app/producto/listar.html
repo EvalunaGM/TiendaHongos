@@ -1,3 +1,18 @@
-{% extends 'app/base.html' %}
-{% block contenido %}
+{% extends 'app/base.html' %} {% block contenido %} {% load humanize %}
+<table class="table table>
+  <tr>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Stock</th>
+    <th>Proovedor</th>
+  </tr>
+
+  {% for p in productos %}
+  <tr>
+    <td>{{ p.nombre | title }}</td>
+    <td>{{ p.precio | intcomma }}</td>
+    <td>{{ p.Stock | intcomma }}</td>
+    <td>{{ p.Proovedor | title }}</td>
+  </tr>
+</table>
 {% endblock %}
