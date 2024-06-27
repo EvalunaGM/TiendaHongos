@@ -25,8 +25,10 @@ SECRET_KEY = 'django-insecure-!zyf^%x(ay^ms0n#8^&jl&+6^_uvz3k7!r*r%@tjzltgxcfqz(
 DEBUG = True
 
 ALLOWED_HOSTS = []
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [

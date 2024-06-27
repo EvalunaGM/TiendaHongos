@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from .forms import ContactoForm, ProductoForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import ContactoForm, ProductoForm, CustomUserCreationForm
 from .models import Producto, Contacto, Proveedor 
-
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 def home (request):
     return render (request, 'app/home.html')
 
@@ -37,9 +38,7 @@ def agregar_producto (request):
         formulario = ProductoForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data ["mensaje"]="guardado correctamente"
-        else:
-            data ["form"] = formulario
+            messages.success(request, "Guardado correctamente")
     return render (request, 'app/producto/agregar.html', data)
 
 def listar_productos (request): 
@@ -48,3 +47,39 @@ def listar_productos (request):
         'productos': productos
     }
     return render (request, 'app/producto/listar.html', data)
+
+def modificar_producto (request, id):
+    producto = get_object_or_404 (Producto, id=id)
+    data = {
+            'form': ProductoForm(instance=producto)
+    }
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Modificado correctamente")
+            return redirect(to="listar_productos")
+            data['form']=formulario
+    return render (request, 'app/producto/modificar.html', data)
+
+def eliminar_producto(request, id):
+    producto=get_object_or_404(Producto, id=id)
+    producto.delete()
+    messages.success(request, "Eliminado correctamente")
+    return redirect(to="listar_productos")
+
+def registro(request):
+    data = {
+        'form': CustomUserCreationForm()
+    }
+
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request, "Te has registrado correctamente")
+            return redirect(to="home")
+        data["form"] = formulario
+    return render(request, 'registration/registro.html', data)

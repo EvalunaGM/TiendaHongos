@@ -11,9 +11,7 @@ class ContactoForm(forms.ModelForm):
         fields = ['nombre', 'correo', 'mensaje', 'tipo_consulta', 'avisos']
 
 class CustomUserCreationForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ["username","email","password"]
+    pass
 
 class ProductoForm(forms.ModelForm):
     class Meta:
