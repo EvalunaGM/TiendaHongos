@@ -1,18 +1,28 @@
-{% extends 'app/base.html' %} {% block contenido %} {% load humanize %}
-<table class="table table">
-  <tr>
-    <th>Nombre</th>
-    <th>Precio</th>
-    <th>Stock</th>
-    <th>Proovedor</th>
-  </tr>
+{% extends 'app/base.html' %}
+{% block contenido %}
+{% load humanize %}
+<div class="container mt-4"> <!-- Added container and margin-top classes -->
+  <div class="card">
+    <div class="card-body">
+      <h1 class="text-center">Listar productos</h1>
+    </div>
+    <table class="table table-stripped table-hover table-responsive-sm">
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Proveedor</th>
+      </tr>
 
-  {% for p in productos %}
-  <tr>
-    <td>{{ p.nombre | title }}</td>
-    <td>{{ p.precio | intcomma }}</td>
-    <td>{{ p.Stock | intcomma }}</td>
-    <td>{{ p.Proovedor | title }}</td>
-  </tr>
-</table>
+      {% for p in productos %}
+      <tr>
+        <td>{{ p.nombre | title }}</td>
+        <td>{{ p.precio | intcomma }}</td>
+        <td>{{ p.stock | intcomma }}</td>
+        <td>{{ p.proveedor | title }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
 {% endblock %}

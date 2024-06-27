@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import ContactoForm, ProductoForm
+from .models import Producto, Contacto, Proveedor 
 
-# Create your views here.
 def home (request):
     return render (request, 'app/home.html')
 

@@ -13,7 +13,7 @@ class Producto (models.Model):
     descripcion = models.TextField(max_length=100)
     imagen = models.ImageField(upload_to="productos", null=True)
     stock = models.IntegerField(default=0)
-    proovedor = models.ForeignKey(Proveedor, on_delete=models.PROTECT) 
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.PROTECT) 
 
     def __str__(self):
         return  self.nombre 
