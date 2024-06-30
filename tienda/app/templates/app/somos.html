@@ -1,6 +1,6 @@
-{% extends 'app/base.html' %}
-{% load static %}
-{% block contenido %}
+{% extends 'app/base.html' %} {% load static %} {%block css%}
+<link rel="stylesheet" href="{% static 'app/css/somos.css'%}" />
+{%endblock%} {% block contenido %}
 <header>
   <div class="container text-center py-5">
     <h1>Bienvenido a nuestra tienda de Hongos Comestibles</h1>
@@ -12,22 +12,32 @@
   <section id="about">
     <div class="row align-items-center">
       <div class="col-md-6">
-        <img src="{% static 'app/img2/somosIMG.jpg' %}" alt="Imagen" class="img-fluid rounded" />
+        <img
+          src="{% static 'app/img2/somosIMG.jpg' %}"
+          alt="Imagen"
+          class="img-fluid rounded"
+        />
       </div>
       <div class="col-md-6">
         <p class="lead">
-          ¡Bienvenidos a nuestra tienda especializada en hongos comestibles de alta calidad en Santiago de Chile! Ofrecemos una amplia variedad de hongos frescos, orgánicos y cultivados con sumo cuidado para garantizar la mejor calidad y sabor. Estamos comprometidos con la frescura y la excelencia en cada producto que ofrecemos. Ubicados en el corazón de Santiago, te invitamos a descubrir el delicioso mundo de los hongos con nosotros.
+          ¡Bienvenidos a nuestra tienda especializada en hongos comestibles de
+          alta calidad en Santiago de Chile! Ofrecemos una amplia variedad de
+          hongos frescos, orgánicos y cultivados con sumo cuidado para
+          garantizar la mejor calidad y sabor. Estamos comprometidos con la
+          frescura y la excelencia en cada producto que ofrecemos. Ubicados en
+          el corazón de Santiago, te invitamos a descubrir el delicioso mundo de
+          los hongos con nosotros.
         </p>
       </div>
     </div>
   </section>
 </div>
-<section class="py-5 bg-light">
+<!--<section class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center titulo_mapa">Nuestra Ubicación</h2>
     <div id="map" class="mt-4">
-      <!-- Map content goes here -->
+       Map content goes here 
     </div>
   </div>
-</section>
+</section>-->
 {% endblock %}
