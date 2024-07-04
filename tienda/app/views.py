@@ -4,7 +4,11 @@ from .models import Producto, Contacto, Proveedor
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 def home (request):
-    return render (request, 'app/home.html')
+    productos = Producto.objects.all()
+    data = {
+        'productos': productos
+    }
+    return render (request, 'app/home.html', data)
 
 def contacto (request):
     data = {
@@ -22,7 +26,11 @@ def contacto (request):
     return render (request, 'app/contacto.html', data)
 
 def shop (request):
-    return render (request, 'app/shop.html')
+    productos = Producto.objects.all()
+    data = {
+        'productos': productos
+    }
+    return render (request, 'app/shop.html', data)
 
 def somos (request):
     return render (request, 'app/somos.html')
